@@ -24,3 +24,11 @@ a {
     background: black;
   }
 }
+
+.ag-theme-alpine {
+  --ag-value-change-value-highlight-background-color: red;
+}
+
+.ag-theme-alpine-dark {
+  --ag-value-change-value-highlight-background-color: #aaa;
+}

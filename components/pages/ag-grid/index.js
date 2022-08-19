@@ -56,12 +56,6 @@ const AGGrid = () => {
       field: "action",
       headerName: "Action",
       editable: true,
-      // cellEditorPopup: true,
-      // cellEditor: CellDropdown,
-      // cellEditorPopupPosition: "over",
-      // singleClickEdit: true,
-      // stopEditingWhenCellsLoseFocus: true,
-
       cellEditor: "agRichSelectCellEditor",
       cellEditorPopup: true,
       cellEditorParams: {
@@ -76,16 +70,6 @@ const AGGrid = () => {
     ...mappedCols,
   ];
 
-  // console.log(
-  //   "call edit >> ",
-  //   gridRef.current.api.columnApi.getColumn("total").visible
-  // );
-
-  console.log(
-    "call ag-grid  >> ",
-    gridRef?.current?.columnApi?.getColumn("bronze").visible
-  );
-
   return (
     <div style={containerStyle}>
       <div style={{ height: "100%", boxSizing: "border-box" }}>
@@ -94,18 +78,6 @@ const AGGrid = () => {
             ref={gridRef}
             rowData={rowData}
             columnDefs={columnDefs}
-            onCellClicked={(params) => {
-              console.log("params  >> ", params);
-
-              // if (params.column.colDef.field === "...") {
-              //   params.api.contextMenuFactory.showMenu(
-              //     params.node,
-              //     params.column,
-              //     params.value,
-              //     params.event
-              //   );
-              // }
-            }}
           />
         </div>
       </div>
