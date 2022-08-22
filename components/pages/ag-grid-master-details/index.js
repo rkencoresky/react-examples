@@ -28,7 +28,6 @@ const AGGrid = () => {
   const detailCellRendererParams = useMemo(() => {
     return {
       detailGridOptions: {
-        rowSelection: "multiple",
         columnDefs: [
           { field: "sport" },
           { field: "gold" },
@@ -39,10 +38,10 @@ const AGGrid = () => {
           flex: 1,
           editable: true,
         },
+        onCellEditingStopped: (value) => console.log(value),
       },
       getDetailRowData: (params) => {
         const { age, athlete, country, date, ...rest } = params.data;
-        // console.log("rest >>> ", rest);
         params.successCallback([rest]);
       },
     };
@@ -136,8 +135,9 @@ const AGGrid = () => {
           detailCellRendererParams={detailCellRendererParams}
           onRowEditingStopped={console.log}
           onCellEditingStopped={console.log}
-          detailRowHeight={105}
-        ></AgGridReact>
+          detailRowHeight={200}
+          onCellValueChanged={console.log}
+        />
       </div>
     </div>
   );

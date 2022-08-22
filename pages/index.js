@@ -6,9 +6,11 @@ export default function Home() {
   return (
     <Box sx={{ p: 4 }}>
       <Typography variant="h6">Explore Examples</Typography>
-      <Stack direction="column" spacing={2} sx={{ mt: 2, width: 100 }}>
+      <Stack direction="column" spacing={2} sx={{ mt: 2, width: 300 }}>
         {examples.map((e) => (
-          <Button onClick={() => router.push(e.route)}>{e.title}</Button>
+          <Button variant="contained" onClick={() => router.push(e.route)}>
+            {e.title}
+          </Button>
         ))}
       </Stack>
     </Box>
